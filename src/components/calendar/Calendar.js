@@ -9,7 +9,7 @@ const Calendar = () => {
             <FullCalendar
              defaultView="dayGridMonth"
               plugins={[ dayGridPlugin,timeGridPlugin,interactionPlugin ]}
-              headers={
+              headerToolbar={
                   {
                       left:"prev,next today",
                       center:"title",
