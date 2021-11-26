@@ -4,7 +4,7 @@ import AddEvent from '../modal/AddEvent'
 const Sidebar = () => {
     return (
         <div className="col-lg-3">
-            <button className="btn btn-primary btn-block col-md-12" data-toggle="modal" data-target="#eventFormModal">Add Event</button>
+            <button className="btn btn-primary btn-block col-md-12" data-toggle="modal" data-target="#addEventModal">Add Event</button>
             <div className="m-t-20">
                 <br/>
                 <div className="external-event bg-success">

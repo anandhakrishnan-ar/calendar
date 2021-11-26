@@ -7,7 +7,7 @@ const Calendar = () => {
     return (
         <div className="col-lg-9">
             <FullCalendar
-             defaultView="dayGridMonth"
+            
               plugins={[ dayGridPlugin,timeGridPlugin,interactionPlugin ]}
               headerToolbar={
                   {
