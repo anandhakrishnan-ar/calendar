@@ -14,7 +14,10 @@ const EventForm = props => {
         endDateChanged,
         selectChange,
         eventColour,
-        colours } = props
+        colours,
+        onClose,
+        createEvent
+    } = props
     return (
         <div>
             <div className="modal" id={modalId} tabIndex="-1" role="dialog">
@@ -22,7 +25,7 @@ const EventForm = props => {
                     <div className="modal-content">
                         <div className="modal-header">
                             <h5 className="modal-title">{modalName}</h5>
-                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                            <button type="button" className="close" data-dismiss="modal" aria-label="Close" onClick={onClose}>
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
@@ -68,7 +71,7 @@ const EventForm = props => {
                                     <select className="form-control form-white" onChange={selectChange} value={eventColour}>
                                         <option value="select colour">Select Colour</option>
                                         {
-                                            colours.map(colour => <option value={colour} key={colour}>{colour}</option>)
+                                            colours.map(colour => <option value={colour.toLowerCase()} key={colour}>{colour}</option>)
                                         }
 
                                     </select>
@@ -77,8 +80,8 @@ const EventForm = props => {
 
                         </div>
                         <div className="modal-footer">
-                            <button type="button" className="btn btn-primary">Save changes</button>
-                            <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" className="btn btn-primary" onClick={createEvent}  data-dismiss="modal">Save changes</button>
+                            <button type="button" className="btn btn-secondary" data-dismiss="modal" onClick={onClose}>Close</button>
                         </div>
                     </div>
                 </div>
