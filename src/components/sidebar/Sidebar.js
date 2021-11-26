@@ -1,5 +1,5 @@
 import React from 'react'
-import AddEvent from './modal/AddEvent'
+import AddEvent from '../modal/AddEvent'
 
 const Sidebar = () => {
     return (
