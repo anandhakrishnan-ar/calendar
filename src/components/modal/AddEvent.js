@@ -59,6 +59,7 @@ const AddEvent = () => {
             title:eventName,
             start,
             end,
+            isAllDayEvent:checkbox,
             eventColour,
             backgroundColor:colourObj[eventColour]
         };
