@@ -1,9 +1,11 @@
-import React, { useContext,useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import AddEvent from '../modal/AddEvent'
+import SelectModal from '../modal/SelectModal'
 import AppContext from '../../context/App/appContext'
+import EditEvent from '../modal/EditEvent'
 const Sidebar = () => {
     const appContext = useContext(AppContext);
-    const { events,getEvents } = appContext
+    const { events, getEvents, selectEvent } = appContext
     useEffect(() => {
         getEvents();
         //eslint-disable-next-line
@@ -16,12 +18,21 @@ const Sidebar = () => {
                 {
                     events.length > 0 ?
                         events.map((event, index) =>
-                            <div className={`external-event bg-${event.eventColour}`} key={index}> {event.title}</div>
+                            <div
+                                className={`external-event bg-${event.eventColour}`}
+                                key={index}
+                                onClick={() => selectEvent(event)}
+                                data-toggle="modal"
+                                data-target="#selection-modal"> 
+                                {event.title}
+                            </div>
                         ) : "No events added"
 
                 }
             </div>
             <AddEvent />
+            <SelectModal />
+            <EditEvent/>
         </div>
     )
 }

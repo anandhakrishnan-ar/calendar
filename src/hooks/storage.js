@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 export const useLocalStorage = (key, initialValue) => {
-    debugger
     const [item, setItem] = useState(() => {
         try {
             return window.localStorage.getItem(key) ? JSON.parse(window.localStorage.getItem(key)) : initialValue
